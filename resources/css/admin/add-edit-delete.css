@@ -1,0 +1,10 @@
+/* add edit delete user */
+.wrap-use-add-edit-delete label.form-label {
+    min-width: 180px;
+}
+
+#user-add-edit-delete-form label.error {
+    margin-left: 180px;
+    white-space: pre-wrap;
+    max-width: 380px;
+}

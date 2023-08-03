@@ -1,2 +1,8 @@
 EBT001: <0> is required.
 EBT002: <0> please enter less than "<1>" characters. (currently <2> characters).
+EBT008: Enter the correct date for <0>.
+EBT004:	Please enter your e-mail address correctly.
+EBT016: Wrong email address or member ID.
+EBT044: Please specify the contract end date as the scheduled cancellation date.
+EBT019: Your email address is already registered.
+EBT005:	Enter <0> in single-byte alphanumeric characters.
