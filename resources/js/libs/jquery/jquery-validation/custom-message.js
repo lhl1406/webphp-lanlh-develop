@@ -8,7 +8,7 @@ $().ready(function() {
         greaterStart: jQuery.validator.format('Please specify the contract end date as the scheduled cancellation date.'),
         onlyNumberAndAlphabetForPassword: jQuery.validator.format('The password cannot contain only single-byte numbers or only single-byte alphabetic characters.'),
         onlyNumberAndAlphabetOneByte: jQuery.validator.format('Please enter {0} in single-byte alphanumeric characters.'),
-        stringValueRange: jQuery.validator.format('パスワードは半角英数字記号で8～20文字で入力してください。'),
+        stringValueRange: jQuery.validator.format('Enter the password in 8 to 20 characters using half-width alphanumeric characters.'),
         equalTo: jQuery.validator.format('Enter the password in 8 to 20 characters using half-width alphanumeric characters.'),
         existsEmail: jQuery.validator.format('Your email address is already registered.'),
         notNull: jQuery.validator.format('{0} is required.'),

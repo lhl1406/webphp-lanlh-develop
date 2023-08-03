@@ -1,0 +1,92 @@
+
+/* Error of dialog import csv */
+
+form div.error-message-list label {
+    min-width: 250px;
+    max-width: 400px;
+}
+
+div.error-message-list {
+    width: 100%;
+}
+
+div.error-message-list span.error, div.error-message-list label.error {
+    height: fit-content;
+} 
+
+.user-name-header {
+    font-size: 16px;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;  
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex: 1;
+    max-width: 250px;
+    padding-bottom: 0;
+}
+
+/* Notification css */
+.alert {
+    padding: 5px 10px;
+    background-color: #f44336;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.6s;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    z-index: 10;
+    top: 60px;
+    left: calc(var(--slidebar-min-width) + 10px);
+}
+
+.alert.success {background-color: #04AA6D;}
+.alert.info {background-color: #2196F3;}
+.alert.warning {background-color: #ff9800;}
+.alert.danger {background-color: #f44336;}
+  
+.alert label {
+    order: 3;
+  } 
+  
+.alert label .closebtn {
+      margin-left: 15px;
+      color: white;
+      font-weight: bold;
+      float: right;
+      font-size: 22px;
+      line-height: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+      order: 3;
+}
+  
+.alert .closebtn:hover {
+    color: black;
+}
+  
+input#closeMessage:checked + div.alert {
+    opacity: 0;
+    display: none;
+    transition: opacity .5s linear;
+}
+  
+form .alert {
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 0;
+    width: 100%;
+}
+  
+form .login-tiltle {
+    position: absolute;
+    top: calc(0% - 65px);
+    font-size: 30px;
+    left: 0;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+  }
