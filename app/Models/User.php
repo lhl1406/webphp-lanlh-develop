@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -11,6 +12,9 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+
+    protected $table = 'user';
+    public $timestamps = false;
 
     /**
      * The attributes that are mass assignable.
@@ -21,24 +25,26 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'group_id',
+        'started_date',
+        'position_id',
+        'created_date',
+        'updated_date',
+        'deleted_date',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    protected function getStartedDateAttribute($value) {
+        if (!isset($value)) {
+            return $value;
+        }
+
+        return \Carbon\Carbon::parse($value)->format('Y/m/d');
+    }
 
     /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
+     * Get the group that owns the user.
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    public function group(): BelongsTo {
+        return $this->belongsTo(Group::class);
+    }
 }
